@@ -10,7 +10,7 @@
     { id: "008", subjects: ["english", "soci"] }
   ];
   
-   export let a = [
+   export let a= [
     { name: "I" },
     { name: "II" },
     { name: "III" },
@@ -20,7 +20,4 @@
     { name: "VII" },
     { name: "VIII" }
   ];
-  
-
-  export let z = [];
   

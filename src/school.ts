@@ -1,8 +1,7 @@
-import { Classroom } from "./class Classroom";
-import { Teacher } from "./class Teacher";
-import { teachersData, a } from "./sampleData";
+import { Classroom } from "./Classroom";
+import { Teacher } from "./Teacher";
+import { teachersData } from "./sampleData";
 
-export let y: any[] = [];
 export class School {
    
   classRooms: Array<Classroom> = [];
@@ -41,28 +40,10 @@ export class School {
   
   // Teachers Shuffle
   
-    Shuffle() {
+    shuffle() {
       this.teachers = this.teachers.sort(() => Math.random() - 0.5);
     }
    
-    daydiv(t: any) {
-      for (let i = 0; i < sample.workingDays; i++) {
-        var rowfound = t.filter((teachers: any) => teachers.day == i + 1);
-          for(let j=0;j<8;j++){
-            t.shift();
-          }
-        t.push(rowfound);
-      }
-       y.push(t);
-    } 
-    
-    clsdiv(data: any) {
-
-      for (var i = 0; i < a.length; i++) {
-        var clsfound = data.filter((teachers1: any) => teachers1.name == a[i].name);
-        this.daydiv(clsfound);
-      }
-    }
   
   // Assign Teacher to Class
   
@@ -75,10 +56,9 @@ export class School {
   
  start() {
       for (let x of this.classRooms) {
-        this.Shuffle();
+        this.shuffle();
         let s = this.assign(x);
       }
-      this.clsdiv(this.classRooms);
     }
   }
   
